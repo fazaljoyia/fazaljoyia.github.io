@@ -10,26 +10,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16.14.0'
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.14.0'
 
-    - name: Install Dependencies
-      run: yarn install
+      - name: Install Dependencies
+        run: yarn install
 
-    - name: Build
-      run: yarn build
+      - name: Build
+        run: yarn build
 
-    - name: Deploy to GitHub Pages
-      run: |
-        if [ ${{ github.ref }} == 'refs/heads/portfolio' ]; then
-          echo "Deploying to GitHub Pages..."
-          yarn deploy
-          
-        else
-          echo "Not deploying to GitHub Pages. This is not the master branch."
-        fi
+      - name: Deploy to GitHub Pages
+        run: |
+          if [ ${{ github.ref }} == 'refs/heads/portfolio' ]; then
+            echo "Deploying to GitHub Pages..."
+            mv out docs
+          else
+            echo "Not deploying to GitHub Pages. This is not the master branch."
+          fi

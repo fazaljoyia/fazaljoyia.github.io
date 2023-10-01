@@ -10,11 +10,11 @@
 /coverage
 
 # next.js
-/.next/
+# /.next/
 
 # production
-/build
-tsconfig.tsbuildinfo
+# /build
+# tsconfig.tsbuildinfo
 
 # misc
 .DS_Store
