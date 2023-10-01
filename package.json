@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "yarn compile && yarn next build && yarn next export -o docs",
-    "deploy": "gh-pages -d out -b gh-pages -t true",
+    "deploy": "gh-pages -d docs -b gh-pages -t true",
     "clean": "rm -rf build-tsc .next",
     "compile": "yarn run -T tsc --build --verbose",
     "dev": "yarn compile && yarn next dev",
