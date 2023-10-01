@@ -28,7 +28,7 @@ jobs:
         run: |
           if [ ${{ github.ref }} == 'refs/heads/portfolio' ]; then
             echo "Deploying to GitHub Pages..."
-            mv out docs
+            yarn deploy
           else
             echo "Not deploying to GitHub Pages. This is not the master branch."
           fi
